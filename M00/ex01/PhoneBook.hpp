@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:07:00 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/03/21 15:04:04 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/03/24 11:55:16 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
 # define BOLDCYAN		"\033[1m\033[36m"		/* Bold Cyan */
 # define BOLDWHITE		"\033[1m\033[37m"		/* Bold White */
 
-
 # include <iomanip>
 # include <string>
 # include "Contact.hpp"
@@ -41,7 +40,6 @@ class PhoneBook {
 public:
     void    add(void);
     void    search(void);
-    void    exit(void);
     void    display(void);
     PhoneBook();
     ~PhoneBook();
@@ -51,10 +49,4 @@ private:
     unsigned int    _current;
     unsigned int    _index;
                 };
-
 #endif
-
-// ◦ It has an array of contacts.
-// ◦ It can store a maximum of 8 contacts. 
-//If the user tries to add a 9th contact, replace the oldest one by the new one.
-// ◦ Please note that dynamic allocation is forbidden.
