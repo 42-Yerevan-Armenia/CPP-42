@@ -290,7 +290,7 @@ d   ?: (ternary operator)
 
 
 // base class
-
+/**/
 class Animal {
 
    public:
