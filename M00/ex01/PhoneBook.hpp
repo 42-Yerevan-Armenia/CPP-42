@@ -6,9 +6,11 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:07:00 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/03/24 11:55:16 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/04/03 19:11:58 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// # pragma once
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
@@ -48,5 +50,6 @@ private:
     Contact         _contact[8];
     unsigned int    _current;
     unsigned int    _index;
+
                 };
 #endif
