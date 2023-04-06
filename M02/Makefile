@@ -1,4 +1,4 @@
-NAME 		=	braiiiiiiinnnzzzz
+NAME 		=	awesome
 CC 			=	c++
 CPPFLAGS 	=	-std=c++98 -Wall -Wextra -Werror
 SRCS 		=	$(wildcard *.cpp)
