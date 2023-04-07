@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 12:49:55 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/04/07 13:14:31 by arakhurs         ###   ########.fr       */
+/*   Created: 2023/04/06 16:13:07 by arakhurs          #+#    #+#             */
+/*   Updated: 2023/04/07 15:30:26 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(const std::string &name)
+int	main(void)
 {
-    _name = name;
-    std::cout << GREEN << name << ": 🧟 is entering into your house 🏚" << RESET << std::endl;
-}
+	Zombie	*Z;
+	int	n = 3;
 
-Zombie::~Zombie()
-{
-    std::cout << YELLOW << this->_name << ": was killed 💀" << RESET << std::endl;
-}
+	Z = zombieHorde(n, "");
 
-void	Zombie::announce(void) const
-{
-    std::cout << RED << this->_name << ": BraiiiiiiinnnzzzZ...🧠" << RESET << std::endl;
+	for (int i = 0; i < n; i++)
+		Z[i].announce();
+	
+	delete[] Z;
+	return (0);
 }

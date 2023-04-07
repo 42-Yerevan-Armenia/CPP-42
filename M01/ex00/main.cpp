@@ -6,24 +6,21 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:52:24 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/04/06 15:48:54 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:41:43 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
-
 int	main()
 {
-	Zombie	*Z_1;
+	Zombie	*Z;
 
-	Z_1 = newZombie("Stack");
-	Z_1->announce();
+	Z = newZombie("Stack");
+	Z->announce();
 
 	randomChump("Heap");
-	delete	Z_1;
+	delete	Z;
 
 	return (0);
 }

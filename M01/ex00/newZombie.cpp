@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:56:03 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/04/06 14:41:25 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:14:24 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,4 @@
 Zombie	*newZombie(std::string name)
 {
 	return (new Zombie(name));	
-};
+}
