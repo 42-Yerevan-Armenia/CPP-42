@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Losers.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/07 16:56:09 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/04/07 21:01:13 by arakhurs         ###   ########.fr       */
+/*   Created: 2023/04/08 12:46:51 by arakhurs          #+#    #+#             */
+/*   Updated: 2023/04/08 13:09:30 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#ifndef LOSERS_HPP
+# define LOSERS_HPP
 
 #include <iostream>
-#include "Weapon.hpp"
+#include <string>
 
-class   HumanB  {
-    
+# define RESET			"\033[0m"
+# define RED			"\033[31m"				/* Red */
+# define GREEN			"\033[32m"				/* Green */
+# define YELLOW			"\033[33m"				/* Yellow */
+
+class Losers    {
+
     public:
-        HumanB(std::string name);
-        ~HumanB();
-        void    attack(void) const;
-        void    setWeapon(Weapon &weapon);
+        Losers(std::string &filename);
+        ~Losers();
+        void    replace(std::string &s1, std::string &s2);
 
     private:
-        std::string _nameB;
-        Weapon  *_weaponB;
+        std::string _in;
+        std::string _out;
                 };
-
 #endif

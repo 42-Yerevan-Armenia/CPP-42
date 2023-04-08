@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:42:06 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/04/07 15:17:09 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/04/07 17:17:41 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
     
     void    announce();
     void    set_name(std::string name);
+
 private:
     std::string _name;
                 };
