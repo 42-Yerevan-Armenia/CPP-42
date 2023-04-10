@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 16:39:03 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/04/10 19:51:30 by arakhurs         ###   ########.fr       */
+/*   Created: 2023/04/10 18:47:19 by arakhurs          #+#    #+#             */
+/*   Updated: 2023/04/10 20:02:24 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ void    Harl::complain(std::string level)   {
 
     int i;
     for(i = 0; i <= 4 && levels[i].compare(level); i++)
-    {    while (i == 4)
+        while (i == 4)
             return ;
-    }
     (this->*ptr[i])();
 /*----------------------------------------*/}
 
