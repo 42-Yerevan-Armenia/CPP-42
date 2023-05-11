@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:46:51 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/04/08 13:09:30 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/05/11 16:14:06 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define LOSERS_HPP
 
 #include <iostream>
+#include <fstream>
 #include <string>
+#include <cstdlib>
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"				/* Red */
