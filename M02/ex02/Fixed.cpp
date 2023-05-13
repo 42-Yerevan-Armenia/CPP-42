@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:22:28 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/13 17:22:30 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/05/13 17:23:56 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ float   Fixed::toFloat(void) const  {return (this->fpv / float(1 << fbn));}
 Fixed::Fixed(const int value){
 /*--------------------------*/
     std::cout << GREEN << "Int constructor called" << RESET << std::endl;
-    this->setRawBits(value); //this->fpv = value << this->fbn;
+    this->setRawBits(value);
 /*-------------------------*/}
 
 Fixed::Fixed(const float value){
