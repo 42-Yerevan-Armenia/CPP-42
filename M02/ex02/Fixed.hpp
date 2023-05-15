@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:21:49 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/13 17:21:51 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/05/15 16:00:16 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ class Fixed {
 		int				    fpv;
             };
 
-std::ostream &operator<<(std::ostream &op, const Fixed &fixed);
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:43:05 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/13 16:51:46 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/05/15 16:00:27 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Fixed {
         Fixed(const Fixed &fixed);
         Fixed(const int value);
         Fixed(const float value);
-        Fixed &operator=(const Fixed &fixed);
+        const Fixed &operator=(const Fixed &fixed);
         
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
@@ -43,6 +43,6 @@ class Fixed {
 		int				    fpv;
             };
 
-std::ostream &operator<<(std::ostream &op, const Fixed &fixed);
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
