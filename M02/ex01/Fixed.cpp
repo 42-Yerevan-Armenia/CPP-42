@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:43:00 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/15 16:11:56 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:41:11 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,8 @@ const Fixed &Fixed::operator=(const Fixed &fixed){
     std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
     if (this != &fixed)
         this->fpv = fixed.getRawBits();
-    return *this;
+    return (*this);
 /*-------------------------------------------*/}
-
-int     Fixed::getRawBits(void) const   {return this->fpv;}
-void    Fixed::setRawBits(int const raw)    {this->fpv = raw;}
-int     Fixed::toInt(void) const    {return (this->fpv >> fbn);}
-float   Fixed::toFloat(void) const  {return (this->fpv / float(1 << fbn));}
 
 Fixed::Fixed(const int value){
 /*--------------------------*/
@@ -47,8 +42,15 @@ Fixed::Fixed(const float value){
     this->fpv = roundf(value * (1 << fbn));
 /*---------------------------*/}
 
+int     Fixed::getRawBits(void) const       {return this->fpv;}
+void    Fixed::setRawBits(int const raw)    {this->fpv = raw;}
+int     Fixed::toInt(void) const            {return (this->fpv >> fbn);}
+float   Fixed::toFloat(void) const          {return (this->fpv / float(1 << fbn));}
+
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed){
 /*-----------------------------------------------------------*/
     out << fixed.toFloat();
     return (out);
 /*----------------------------------------------------------*/}
+
+
