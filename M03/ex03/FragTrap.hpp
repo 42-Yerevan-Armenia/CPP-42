@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:38:46 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/26 17:19:05 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:54:23 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap {
+class FragTrap: public virtual ClapTrap {
 
     public:
         FragTrap();
