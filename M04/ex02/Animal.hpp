@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/27 16:21:29 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/27 20:51:48 by arakhurs         ###   ########.fr       */
+/*   Created: 2023/05/26 18:29:25 by arakhurs          #+#    #+#             */
+/*   Updated: 2023/05/27 20:50:17 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"				/* Red */
@@ -23,17 +23,18 @@
 #include <iostream>
 #include <string>
 
-class Brain {
-    
+class Animal    {
+
     public:
-        Brain();
-        Brain(Brain &other);
-        Brain &operator=(const Brain &other);
-        ~Brain();
-    
-        std::string &operator[](unsigned int i);
+        virtual ~Animal();
+        Animal &operator=(const Animal &other);
+        std::string getType() const;
+        virtual void makeSound() const;
 
     protected:
-        std::string _ideas[100];
-            };
+        std::string _type;
+        Animal();
+        Animal(Animal &other);
+        Animal(const std::string& type);
+                };
 #endif

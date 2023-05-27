@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/27 16:21:29 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/27 20:51:48 by arakhurs         ###   ########.fr       */
+/*   Created: 2023/05/26 18:29:25 by arakhurs          #+#    #+#             */
+/*   Updated: 2023/05/27 16:12:35 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"				/* Red */
@@ -23,17 +23,19 @@
 #include <iostream>
 #include <string>
 
-class Brain {
-    
+class WrongAnimal    {
+
     public:
-        Brain();
-        Brain(Brain &other);
-        Brain &operator=(const Brain &other);
-        ~Brain();
-    
-        std::string &operator[](unsigned int i);
+        WrongAnimal();
+        virtual ~WrongAnimal();
+        WrongAnimal(WrongAnimal &other);
+        WrongAnimal(const std::string& type);
+        WrongAnimal &operator=(const WrongAnimal &other);
+
+        std::string getType() const;
+        virtual void makeSound() const;
 
     protected:
-        std::string _ideas[100];
-            };
+        std::string _type;
+                };
 #endif
