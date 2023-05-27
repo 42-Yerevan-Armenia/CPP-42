@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:24:40 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/26 17:16:14 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/05/26 18:56:47 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,23 @@ ClapTrap::ClapTrap()    {
 ClapTrap::~ClapTrap(){std::cout << RED << "Destructor called for ClapTrap 💀" << RESET << std::endl;}
 
 ClapTrap::ClapTrap(const ClapTrap &other)  {
-/*-------------------------------*/
+/*----------------------------------------*/
     std::cout << YELLOW << "Copy constructor called for ClapTrap" << RESET << std::endl;
     _name =         other._name;
     _hitpoints =    other._hitpoints;
     _energypoints = other._energypoints;
     _attackpoints = other._attackpoints;
-/*------------------------------*/}
+/*---------------------------------------*/}
 
 ClapTrap   &ClapTrap::operator=(const ClapTrap &other)  {
-/*--------------------------------------------*/
+/*-----------------------------------------------------*/
     std::cout << CYAN << "Copy assignment operator called for ClapTrap" << RESET << std::endl;
     _name =         other._name;
     _hitpoints =    other._hitpoints;
     _energypoints = other._energypoints;
     _attackpoints = other._attackpoints;
     return (*this);
-/*-------------------------------------------*/}
+/*----------------------------------------------------*/}
 
 ClapTrap::ClapTrap(std::string str): _name(str), _hitpoints(10), _energypoints(10), _attackpoints(1)
 {   std::cout << GREEN << "Constructor for " << str << std::endl;}
