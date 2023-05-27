@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:28:01 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/27 17:58:15 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/05/27 18:11:36 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ int main()
     }
     for (int i = 0; i < 10; i++)
         delete arr[i];
+    system("leaks fire");
 }
