@@ -1,4 +1,4 @@
-NAME 		=	interface/recap
+NAME 		=	interface
 CC 			=	c++
 CPPFLAGS 	=	-std=c++98 -Wall -Wextra -Werror
 SRCS 		=	$(wildcard *.cpp)

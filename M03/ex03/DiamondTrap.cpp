@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:19:27 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/26 18:08:15 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/05/29 15:06:46 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,5 @@ int DiamondTrap::getAttackPoints() const
 
 void    DiamondTrap::setAttackPoints(int a)
     {this->_attackpoints = a;}
-
-void    DiamondTrap::attack(const std::string &target){
-/*---------------------------------------------------*/
-    if (_energypoints == 0 || _hitpoints == 0)
-        return ;
-    _energypoints--;
-    std::cout << MAGENTA << _name << " attacks 🗡 " << target;
-    if (_attackpoints > 0)
-        std::cout << ", causing " << CYAN << _attackpoints << MAGENTA << " damage 💥 you has "<< CYAN << _energypoints << MAGENTA << " energy 💪" << std::endl;
-    else
-        std::cout << ", but causes no damage 👻" << std::endl;
-/*--------------------------------------------------*/}
 
 void DiamondTrap::whoAmI()  {std::cout << YELLOW << _name << " : " << ClapTrap::_name << std::endl;}
