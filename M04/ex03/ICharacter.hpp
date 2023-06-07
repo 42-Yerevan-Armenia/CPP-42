@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 10:48:42 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/29 11:14:47 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/04 17:53:10 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ class ICharacter    {
 		virtual void				use(int idx, ICharacter &target) = 0;
                     };
 #endif
-//✅

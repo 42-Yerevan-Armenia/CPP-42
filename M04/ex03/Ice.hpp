@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 21:05:56 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/29 11:16:27 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/04 17:54:46 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ class Ice : public AMateria {
         Ice &operator=(const Ice &other);
         ~Ice();
         
-        //
-        //
+        AMateria    *clone(void) const;
+        void        use(ICharacter &target);
                             };
 #endif
-//❌

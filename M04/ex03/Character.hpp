@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 21:05:48 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/29 11:14:25 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/04 18:01:05 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,14 @@ class Character : public ICharacter{
         Character &operator=(const Character &other);
         ~Character();
 
-        //
-        //
-        //
-        //
+		std::string const	&getName() const;
+		void				equip(AMateria *item);
+		void				unequip(int i);
+		void				use(int i, ICharacter &target);
         
     private:
-        //
-        //
-        //
+        std::string _name;
+        int         _size;
+        AMateria    *_inventory[4];
                 };
 #endif
-//❌
