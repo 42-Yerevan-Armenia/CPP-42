@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:29:25 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/09 16:23:25 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/09 19:25:27 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Animal    {
         virtual ~Animal();
         Animal &operator=(const Animal &other);
         std::string getType() const;
-        virtual void makeSound() const;
+        virtual void makeSound() const = 0;
 
     protected:
         std::string _type;
