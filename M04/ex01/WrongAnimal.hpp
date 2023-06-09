@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:29:25 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/27 16:12:35 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:22:57 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@
 # define CYAN			"\033[36m"				/* Cyan */
 
 #include <iostream>
-#include <string>
 
 class WrongAnimal    {
 
     public:
         WrongAnimal();
-        virtual ~WrongAnimal();
+        ~WrongAnimal();
         WrongAnimal(WrongAnimal &other);
         WrongAnimal(const std::string& type);
         WrongAnimal &operator=(const WrongAnimal &other);
 
         std::string getType() const;
-        virtual void makeSound() const;
+        void makeSound() const;
 
     protected:
         std::string _type;

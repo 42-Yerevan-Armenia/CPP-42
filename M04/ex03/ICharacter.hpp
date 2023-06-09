@@ -6,14 +6,13 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 10:48:42 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/04 17:53:10 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:24:27 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-#include <string>
 #include "AMateria.hpp"
 
 class AMateria;

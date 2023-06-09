@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:28:01 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/27 16:16:11 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:39:15 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ int main()
     i->makeSound(); //will output the cat sound!
     meta->makeSound();
 
-    const WrongAnimal* Wmeta = new WrongAnimal();
-    const WrongAnimal* k = new WrongCat();
-    std::cout << k->getType() << " " << std::endl;
+    const WrongAnimal* animalanimal = new WrongAnimal();
+    const WrongAnimal* animalcat = new WrongCat();
+    // const WrongCat* catcat = new WrongCat();
+    std::cout << animalcat->getType() << " " << std::endl;
     
-    k->makeSound();
-    Wmeta->makeSound();
-return 0;
+    // catcat->makeSound();
+    animalcat->makeSound();
+    animalanimal->makeSound();
+    return 0;
 }

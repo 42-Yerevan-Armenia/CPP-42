@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 21:05:48 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/04 18:01:05 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:24:08 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # define CYAN			"\033[36m"				/* Cyan */
 
 #include <iostream>
-#include <string>
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 

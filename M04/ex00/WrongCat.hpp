@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:31:22 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/27 16:16:44 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/07 18:16:25 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ class WrongCat : public WrongAnimal   {
         WrongCat(WrongCat &other);
         ~WrongCat();
         using WrongAnimal::operator=;
-        virtual void makeSound() const;
+        void makeSound() const;
                             };
 #endif

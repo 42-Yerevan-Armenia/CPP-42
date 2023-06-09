@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:28:01 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/27 18:11:36 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:40:40 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ int main()
     delete y;
     std::cout << "***************" << std::endl;
 
-    Animal *arr[10];
+    // Animal *arr[10];
 
-    for (int i = 0; i < 10; i++)
-    {
-        if (i % 2 == 0)
-            arr[i] = new Cat();
-        else
-            arr[i] = new Dog(); 
-        std::cout << "-------------" << std::endl;
-    }
-    for (int i = 0; i < 10; i++)
-        delete arr[i];
-    system("leaks fire");
+    // for (int i = 0; i < 10; i++)
+    // {
+    //     if (i % 2 == 0)
+    //         arr[i] = new Cat();
+    //     else
+    //         arr[i] = new Dog(); 
+    //     std::cout << "-------------" << std::endl;
+    // }
+    // for (int i = 0; i < 10; i++)
+    //     delete arr[i];
+    // system("leaks fire");
 }

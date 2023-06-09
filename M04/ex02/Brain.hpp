@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 16:21:29 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/27 20:51:42 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:23:21 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@
 # define CYAN			"\033[36m"				/* Cyan */
 
 #include <iostream>
-#include <string>
 
 class Brain {
     
     public:
         Brain();
-        Brain(Brain &other);
+        Brain(const Brain &other);
         Brain &operator=(const Brain &other);
         ~Brain();
-
+    
         std::string &operator[](unsigned int i);
 
     protected:
-        std::string _ideas[100];
+        std::string *_ideas;
             };
 #endif

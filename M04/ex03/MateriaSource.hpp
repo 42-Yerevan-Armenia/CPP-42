@@ -6,14 +6,13 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 21:06:00 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/04 17:53:18 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:24:32 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
-#include <string>
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 

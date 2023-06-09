@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:24:40 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/26 18:57:19 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/07 18:15:06 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ClapTrap   &ClapTrap::operator=(const ClapTrap &other)  {
     return (*this);
 /*----------------------------------------------------*/}
 
-ClapTrap::ClapTrap(std::string str): _name(str), _hitpoints(10), _energypoints(10), _attackpoints(1)
+ClapTrap::ClapTrap(std::string str): _name(str), _hitpoints(10), _energypoints(10), _attackpoints(0)
 {   std::cout << GREEN << "Constructor for " << str << std::endl;}
 
 int ClapTrap::getAttackPoints() const

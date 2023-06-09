@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:29:25 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/27 16:03:25 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:40:06 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # define CYAN			"\033[36m"				/* Cyan */
 
 #include <iostream>
-#include <string>
 
 class Animal    {
 
