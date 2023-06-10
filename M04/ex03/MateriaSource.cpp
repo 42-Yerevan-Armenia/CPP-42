@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 21:05:58 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/04 17:53:16 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/10 18:26:58 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 MateriaSource::MateriaSource()	{
 /*-----------------------------*/
 	_size = 0;
+	for (int i = 0; i < 4; i++)
+        _materias[i] = NULL;
 	std::cout << GREEN << "Default constructor for MateriaSource" << RESET << std::endl;
 /*----------------------------*/}
 
@@ -36,8 +38,6 @@ MateriaSource::MateriaSource(const MateriaSource &other)   {
 MateriaSource    &MateriaSource::operator=(const MateriaSource &other)  {
 /*---------------------------------------------------------------------*/
     std::cout << CYAN << "Copy assignment operator for MateriaSource" << RESET << std::endl;
-    for (int i = 0; i < _size; ++i)
-		delete _materias[i];
 	_size = other._size;
 	for (int i = 0; i < _size; ++i)
 		_materias[i] = other._materias[i]->clone();

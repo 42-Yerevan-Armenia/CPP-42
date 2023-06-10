@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 21:05:46 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/07 14:49:30 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/10 18:30:01 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ Character::Character(){_size = 0; std::cout << GREEN << "Default constructor for
 Character::~Character() {
 /*---------------------*/
     std::cout << RED << "Destructor for Character 💀 " << GREEN << _name << RESET << std::endl;
+    for (int i = 0; i < 4; i++)
+        _inventory[i] = NULL;
     for (int i = 0; i < _size; i++)
         delete _inventory[i];
 /*--------------------*/}
@@ -45,6 +47,8 @@ Character::Character(std::string const &name){
 /*------------------------------------------*/
     _size = 0;
     _name = name;
+    for (int i = 0; i < 4; i++)
+        _inventory[i] = NULL;
     std::cout << GREEN << "Type constructor for Character " << CYAN << "[" << _name << "]" << RESET << std::endl;
 /*-----------------------------------------*/}
 
@@ -52,7 +56,7 @@ std::string const   &Character::getName() const {return _name;}
 
 void    Character::equip(AMateria *item)   {
 /*----------------------------------------*/
-	if (_size < 4)
+    if (_size < 4)
 	{
         _inventory[(_size)++] = item;
         std::cout << "[" << item->getType() << "]" << MAGENTA << " equiped in inventory in index " << GREEN << "[" << _size - 1 << "]" << RESET << std::endl;
@@ -63,7 +67,10 @@ void    Character::equip(AMateria *item)   {
 
 void	Character::unequip(int i)   {
 /*---------------------------------*/ 
-
+    if (!_inventory[i] && i < 4)
+        std::cout << MAGENTA << "Can't unequip the empty inventory in index " << CYAN << "[" << i << "]" << std::endl;
+    else if (i > 3)
+        std::cout << RED << "❗️ERROR❗️ " << MAGENTA << "you can uneqip only 4 inventory, wrong index " << RED << "[" << i << "]" << std::endl;
     if (i >= 0 && i < _size)
     {
         if (i < _size)
@@ -83,6 +90,10 @@ void	Character::unequip(int i)   {
 
 void	Character::use(int i, ICharacter &target)   {
 /*-------------------------------------------------*/
-    if (i >= 0 && i < _size)
+    if (!_inventory[i] && i < 4)
+        std::cout << MAGENTA << "Empty inventory in index " << CYAN << "[" << i << "]" << std::endl;
+    else if (i > 3)
+        std::cout << RED << "❗️ERROR❗️ " << MAGENTA << "you can use only 4 inventory, wrong index " << RED << "[" << i << "]" << std::endl;
+     if (i >= 0 && i < _size)
         _inventory[i]->use(target);
 /*------------------------------------------------*/}

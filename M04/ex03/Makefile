@@ -1,6 +1,6 @@
 NAME 		=	interface
 CC 			=	c++
-CPPFLAGS 	=	-std=c++98 -Wall -Wextra -Werror
+CPPFLAGS 	=	-std=c++98 -Wall -Wextra -Werror -g -ggdb3
 SRCS 		=	$(wildcard *.cpp)
 HEADER		=	$(wildcard *.hpp)
 OBJS 		=	$(patsubst %.cpp, %.o, $(SRCS))
