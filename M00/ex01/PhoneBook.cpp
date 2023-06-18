@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:06:26 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/03/25 20:37:02 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:49:53 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ PhoneBook::PhoneBook()  {
 PhoneBook::~PhoneBook() {};
 
 void    empty(std::string &str, std::string display) {
-/*-------------------------------------------------*/
+/*--------------------------------------------------*/
     std::cout << CYAN << display << WHITE;
     do
     {
@@ -35,7 +35,7 @@ void    empty(std::string &str, std::string display) {
 /*-------------------------------------------------*/}
 
 bool only_digits(const std::string &str)    {
-/*----------------------------------------*/
+/*---------------------------------------=-*/
     for (size_t i = 0; i < str.length(); ++i)
         if (!std::isdigit(str[i]))
             return false;
@@ -51,7 +51,7 @@ bool only_letters(const std::string& str)   {
 /*----------------------------------------*/}
 
 void get_input(std::string &str, const std::string &display, bool (*checker)(const std::string&))    {
-/*--------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------*/
     std::cout << CYAN << display << WHITE;
     do
     {
@@ -64,11 +64,11 @@ void get_input(std::string &str, const std::string &display, bool (*checker)(con
             std::cout << RED "Invalid input, try again 👉 " WHITE;
     }
     while (str.empty() || !checker(str));
-/*--------------------------------------------------------------------------------------------*/}
+/*-------------------------------------------------------------------------------------------------*/}
 
 
 void    PhoneBook::add(){
-/*--------------------*/
+/*---------------------*/
     Contact     tmp;
     std::string str;
 
@@ -101,7 +101,7 @@ std::string resize(std::string str)
 }
 
 void    PhoneBook::display()    {
-/*----------------------------*/
+/*-----------------------------*/
     std::cout << MAGENTA "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|" << std::endl;
     for (int i = 0; i < (int)this->_index; i++)
     {
@@ -112,11 +112,10 @@ void    PhoneBook::display()    {
         << "|" << std::setw(10) << resize(_contact[i].getNickName())
         << "|" << std::endl;
     }
-    
 /*----------------------------*/}
 
 void    PhoneBook::search() {
-/*------------------------*/
+/*-------------------------*/
     unsigned int    index;
     display();
     std::cout << GREEN "Enter the index " << WHITE;
