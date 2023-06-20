@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:23:02 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/18 13:45:51 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/19 16:08:22 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,15 @@ class Form  {
         void                setefgGrade(int n);
         void                beSigned(const Bureaucrat &target);
 
+        class GradeTooHighException : public std::exception {public: char const  *what() const throw();};
+        class GradeTooLowException : public std::exception  {public: char const  *what() const throw();};
+        class SignedException : public std::exception       {public: char const  *what() const throw();};
+
     private:
         std::string const   _fname;
         bool                _boolean;
         int const           _signed_grade;
         int const           _executed_fgrade;
-
-    class GradeTooHighException : public std::exception {
-
-        public:
-                char const  *what() const throw();
-                        };
-
-    class GradeTooLowException : public std::exception  {
-
-        public:
-                char const  *what() const throw();
-                        };
-    class SignedException : public std::exception  {
-
-        public:
-                char const  *what() const throw();
-                        };
                     };
 
 std::ostream &operator<<(std::ostream &out, Form const &f);

@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:23:03 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/18 19:08:37 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:42:48 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,14 @@ void    Form::beSigned(const Bureaucrat &target)  {
 
 std::ostream &operator<<(std::ostream &out, Form const &f)  {
 /*---------------------------------------------------------*/
-    const int cellWidth = 15;
+    const int wh = 15;
 
     out << MAGENTA << "Form " << CYAN << f.getFName() << MAGENTA << " Bureaucrat 📝 ";
     if (f.getFGrade())
         out << "✅ | ";
     else
         out << "❌ | ";
-    out << std::setw(cellWidth) << std::right << "Signed grade: " << CYAN << std::setw(3) << f.getsgGrade() << MAGENTA << " | ";
-    out << std::setw(cellWidth) << std::right << "Executed grade: " << CYAN << std::setw(3) << f.getefgGrade() << MAGENTA << " | " << std::endl;
+    out << std::setw(wh) << std::right << "Signed grade: " << CYAN << std::setw(3) << f.getsgGrade() << MAGENTA << " | ";
+    out << std::setw(wh) << std::right << "Executed grade: " << CYAN << std::setw(3) << f.getefgGrade() << MAGENTA << " | " << std::endl;
     return (out);
 /*--------------------------------------------------------*/}

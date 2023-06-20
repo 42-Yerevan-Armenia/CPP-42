@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:22:51 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/18 16:09:11 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/19 14:45:11 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 int main()
 {
+    Bureaucrat  bur1("Abel", 80);
+	Bureaucrat  bur2("Bob", 20);
+    Form        form1("B2", 60, 100);
+	Form        form2("B1", 50, 100);
+    Form        form3("A2", 8, 20);
+    Form        form4("A1", 10, 20);
 	try
     {
-        Bureaucrat  bur1("Abel", 80);
-		Bureaucrat  bur2("Bob", 20);
-        Form        form1("B2", 60, 100);
-		Form        form2("B1", 50, 100);
-        Form        form3("A2", 8, 20);
-        Form        form4("A1", 10, 20);
         std::cout << "---------------------------------------------------------------------" << std::endl;
 		std::cout << bur1 << bur2 << std::endl;
 		std::cout << form1 << form2 << std::endl;

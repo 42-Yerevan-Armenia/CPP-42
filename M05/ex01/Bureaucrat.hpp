@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:48:47 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/16 15:10:24 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/19 16:18:44 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,12 @@ class Bureaucrat    {
         void                decrement();
         void                signForm(Form &f) const;
 
+        class GradeTooHighException : public std::exception {public: char const  *what() const throw();};
+        class GradeTooLowException : public std::exception  {public: char const  *what() const throw();};
+
     private:
         std::string const   _name;
         int                 _grade;
-
-    class GradeTooHighException : public std::exception {
-
-        public:
-                char const  *what() const throw();
-                        };
-
-    class GradeTooLowException : public std::exception  {
-
-        public:
-                char const  *what() const throw();
-                        };
                     };
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &i);
 
