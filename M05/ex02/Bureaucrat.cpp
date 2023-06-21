@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 19:44:50 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/19 11:02:08 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/21 15:45:45 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other.getName()) {
 /*----------------------------------------------------------------------*/
     std::cout << YELLOW << "Copy constructor called" << RESET << std::endl;
     if (other.getGrade() > MIN)
-        throw Bureaucrat::GradeTooLowException();
+        throw GradeTooLowException();
     if (other.getGrade() < MAX)
-        throw Bureaucrat::GradeTooHighException();
+        throw GradeTooHighException();
     if (this != &other)
         *this = other;
 /*----------------------------------------------------------------------*/}
@@ -32,9 +32,9 @@ Bureaucrat   &Bureaucrat::operator=(const Bureaucrat &other)  {
      if (this == &other)
         return (*this);
     if (other.getGrade() > MIN)
-        throw Bureaucrat::GradeTooLowException();
+        throw GradeTooLowException();
     if (other.getGrade() < MAX)
-        throw Bureaucrat::GradeTooHighException();  
+        throw GradeTooHighException();  
     _grade = other.getGrade();
     return (*this);
 /*----------------------------------------------------------*/}
@@ -43,9 +43,9 @@ Bureaucrat::Bureaucrat(std::string const str, int grade): _name(str)  {
 /*-------------------------------------------------------------------*/
     std::cout << GREEN << "Constructor for " << str << std::endl;
     if (grade > MIN)
-        throw Bureaucrat::GradeTooLowException();
+        throw GradeTooLowException();
     if (grade < MAX)
-        throw Bureaucrat::GradeTooHighException();
+        throw GradeTooHighException();
      _grade = grade;
 /*------------------------------------------------------------------*/}
 
@@ -58,7 +58,7 @@ void    Bureaucrat::increment() {
 /*-----------------------------*/
     std::cout << YELLOW << "Increment" << RESET << std::endl;
     if (_grade == MAX)
-        throw Bureaucrat::GradeTooLowException();
+        throw GradeTooLowException();
     _grade -= 1;
 /*----------------------------*/}
 
@@ -66,7 +66,7 @@ void    Bureaucrat::decrement() {
 /*-----------------------------*/
     std::cout << YELLOW << "Decrement" << RESET << std::endl;
     if (_grade == MIN)
-        throw Bureaucrat::GradeTooHighException();
+        throw GradeTooHighException();
     _grade += 1;
 /*----------------------------*/}
 
@@ -78,7 +78,7 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat const &bur)  {
 /*----------------------------------------------------------------*/}
 
 void    Bureaucrat::signForm(AForm &f) const {
-/*-----------------------------------------*/
+/*------------------------------------------*/
     try
     {
         f.beSigned(*this);
@@ -88,10 +88,10 @@ void    Bureaucrat::signForm(AForm &f) const {
     {
         std::cerr << GREEN << _name << "'s " << e.what() << std::endl;
     }
-/*----------------------------------------*/}
+/*-----------------------------------------*/}
 
 void    Bureaucrat::execForm(AForm &f) const {
-/*-----------------------------------------*/
+/*------------------------------------------*/
     try
     {
         f.execute(*this);
@@ -101,4 +101,4 @@ void    Bureaucrat::execForm(AForm &f) const {
     {
         std::cerr << GREEN << _name << "'s " << e.what() << std::endl;
     }
-/*----------------------------------------*/}
+/*-----------------------------------------*/}

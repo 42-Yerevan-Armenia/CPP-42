@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:26:48 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/20 11:35:41 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/21 15:45:13 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,41 +16,41 @@ AForm::AForm() : _signed_grade(20) , _executed_fgrade(8) {_boolean = false; std:
 AForm::~AForm(){std::cout << RED << "Destructor for AForm 💀" << CYAN << _fname << RESET << std::endl;}
 
 AForm::AForm(const AForm &other) :_fname(other.getFName()), _signed_grade(other.getsgGrade()) , _executed_fgrade(other.getefgGrade()) {
-/*--------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
     std::cout << YELLOW << "Copy constructor called" << RESET << std::endl;
     if (_signed_grade > MIN || _executed_fgrade > MIN)
-        throw AForm::GradeTooLowException();
+        throw GradeTooLowException();
     if (_signed_grade < MAX || _executed_fgrade < MAX)
-        throw AForm::GradeTooHighException();
+        throw GradeTooHighException();
     if (this != &other)
         *this = other;
-/*--------------------------------------------------------------------------------------------------------------------------------*/}
+/*-----------------------------------------------------------------------------------------------------------------------------------*/}
 
 AForm   &AForm::operator=(const AForm &other)  {
-/*-----------------------------------------*/
+/*--------------------------------------------*/
     std::cout << CYAN << "Copy assignment operator called for " << _fname << RESET << std::endl;
      if (this == &other)
         return (*this);
     if (_signed_grade > MIN || _executed_fgrade > MIN)
-        throw AForm::GradeTooLowException();
+        throw GradeTooLowException();
     if (_signed_grade < MAX || _executed_fgrade < MAX)
-        throw AForm::GradeTooHighException();
+        throw GradeTooHighException();
     setFName(other.getFName());
     _boolean = other.getFGrade();
     setsgGrade(other.getsgGrade());
     setefgGrade(other.getefgGrade());
     return (*this);
-/*-----------------------------------------*/}
+/*-------------------------------------------*/}
 
 AForm::AForm(std::string const str, int sg, int efg): _fname(str), _signed_grade(sg) , _executed_fgrade(efg)  {
-/*---------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------*/
     std::cout << GREEN << "Constructor for AForm " << CYAN << str << std::endl;
     _boolean = false;
     if (sg > MIN || efg > MIN)
-        throw AForm::GradeTooLowException();
+        throw GradeTooLowException();
     if (sg < MAX || efg < MAX)
-        throw AForm::GradeTooHighException();    
-/*--------------------------------------------------------------------------------------------------------*/}
+        throw GradeTooHighException();    
+/*----------------------------------------------------------------------------------------------------------*/}
 
 std::string const AForm::getFName()   const {return (_fname);}
 bool              AForm::getFGrade()  const {return (_boolean);}
@@ -67,23 +67,23 @@ char        const *AForm::SignedException::what()       const throw(){return ("A
 char        const *AForm::ExecuteException::what()       const throw(){return ("AForm is not high enough for execute❗️");}
 
 void    AForm::beSigned(const Bureaucrat &target)  {
-/*-----------------------------------------------*/
+/*------------------------------------------------*/
     if (_boolean)
-        throw AForm::SignedException();
+        throw SignedException();
     if (target.getGrade() <= _signed_grade)
         _boolean = true;
     else
-        throw AForm::GradeTooLowException();
-/*----------------------------------------------*/}
+        throw GradeTooLowException();
+/*-----------------------------------------------*/}
 
 void    AForm::execute(Bureaucrat const &executor) const   {
-/*---------------------------------------------------------*/
+/*--------------------------------------------------------*/
     if (_boolean && executor.getGrade() <= _executed_fgrade)
-        throw AForm::ExecuteException();
-/*--------------------------------------------------------*/}
+        throw ExecuteException();
+/*-------------------------------------------------------*/}
 
 std::ostream &operator<<(std::ostream &out, AForm const &f)  {
-/*---------------------------------------------------------*/
+/*----------------------------------------------------------*/
     out << MAGENTA << "AForm " << CYAN << f.getFName() << MAGENTA << " Bureaucrat 📝 ";
     if (f.getFGrade())
         out << "✅ | ";
@@ -92,4 +92,4 @@ std::ostream &operator<<(std::ostream &out, AForm const &f)  {
     out << std::setw(15) << std::right << "Signed grade: " << CYAN << std::setw(3) << f.getsgGrade() << MAGENTA << " | ";
     out << std::setw(15) << std::right << "Executed grade: " << CYAN << std::setw(3) << f.getefgGrade() << MAGENTA << " | " << std::endl;
     return (out);
-/*--------------------------------------------------------*/}
+/*---------------------------------------------------------*/}

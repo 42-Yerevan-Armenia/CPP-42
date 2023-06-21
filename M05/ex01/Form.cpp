@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:23:03 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/19 13:42:48 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/21 15:46:41 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Form::Form(const Form &other) :_fname(other.getFName()), _signed_grade(other.get
 /*--------------------------------------------------------------------------------------------------------------------------------*/
     std::cout << YELLOW << "Copy constructor called" << RESET << std::endl;
     if (_signed_grade > MIN || _executed_fgrade > MIN)
-        throw Form::GradeTooLowException();
+        throw GradeTooLowException();
     if (_signed_grade < MAX || _executed_fgrade < MAX)
-        throw Form::GradeTooHighException();
+        throw GradeTooHighException();
     if (this != &other)
         *this = other;
 /*--------------------------------------------------------------------------------------------------------------------------------*/}
@@ -32,9 +32,9 @@ Form   &Form::operator=(const Form &other)  {
      if (this == &other)
         return (*this);
     if (_signed_grade > MIN || _executed_fgrade > MIN)
-        throw Form::GradeTooLowException();
+        throw GradeTooLowException();
     if (_signed_grade < MAX || _executed_fgrade < MAX)
-        throw Form::GradeTooHighException();
+        throw GradeTooHighException();
     setFName(other.getFName());
     _boolean = other.getFGrade();
     setsgGrade(other.getsgGrade());
@@ -47,9 +47,9 @@ Form::Form(std::string const str, int sg, int efg): _fname(str), _signed_grade(s
     std::cout << GREEN << "Constructor for Form " << CYAN << str << std::endl;
     _boolean = false;
     if (sg > MIN || efg > MIN)
-        throw Form::GradeTooLowException();
+        throw GradeTooLowException();
     if (sg < MAX || efg < MAX)
-        throw Form::GradeTooHighException();    
+        throw GradeTooHighException();    
 /*--------------------------------------------------------------------------------------------------------*/}
 
 std::string const Form::getFName()   const {return (_fname);}
@@ -68,11 +68,11 @@ char        const *Form::SignedException::what()       const throw(){return ("Fo
 void    Form::beSigned(const Bureaucrat &target)  {
 /*-----------------------------------------------*/
     if (_boolean)
-        throw Form::SignedException();
+        throw SignedException();
     if (target.getGrade() <= _signed_grade)
         _boolean = true;
     else
-        throw Form::GradeTooLowException();
+        throw GradeTooLowException();
 /*----------------------------------------------*/}
 
 std::ostream &operator<<(std::ostream &out, Form const &f)  {
