@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:48:41 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/21 15:46:13 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/25 20:00:46 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other.getName()) {
 Bureaucrat   &Bureaucrat::operator=(const Bureaucrat &other)  {
 /*-----------------------------------------------------------*/
     std::cout << CYAN << "Copy assignment operator called for " << _name << RESET << std::endl;
-     if (this == &other)
+    if (this == &other)
         return (*this);
     if (other.getGrade() > MIN)
         throw GradeTooLowException();

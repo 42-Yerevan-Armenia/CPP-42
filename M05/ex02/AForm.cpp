@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:26:48 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/21 15:45:13 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/25 20:01:05 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ AForm::AForm(const AForm &other) :_fname(other.getFName()), _signed_grade(other.
 AForm   &AForm::operator=(const AForm &other)  {
 /*--------------------------------------------*/
     std::cout << CYAN << "Copy assignment operator called for " << _fname << RESET << std::endl;
-     if (this == &other)
+    if (this == &other)
         return (*this);
     if (_signed_grade > MIN || _executed_fgrade > MIN)
         throw GradeTooLowException();

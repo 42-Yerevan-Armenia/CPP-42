@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:27:00 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/20 15:01:47 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/25 19:59:28 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &oth
 PresidentialPardonForm   &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)  {
 /*-----------------------------------------------------------------------------------------------*/
     std::cout << CYAN << "Copy assignment operator called for " << other.getTName() << RESET << std::endl;
-     if (this == &other)
+    if (this == &other)
         return (*this);
     if (other.getsgGrade() > MIN || other.getefgGrade() > MIN)
         throw AForm::GradeTooLowException();

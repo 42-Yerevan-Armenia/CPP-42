@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:29:43 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/20 15:02:23 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/25 19:59:19 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 ShrubberyCreationForm   &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)  {
 /*--------------------------------------------------------------------------------------------*/
     std::cout << CYAN << "Copy assignment operator called for " << other.getTName() << RESET << std::endl;
-     if (this == &other)
+    if (this == &other)
         return (*this);
     if (other.getsgGrade() > MIN || other.getefgGrade() > MIN)
         throw AForm::GradeTooLowException();
