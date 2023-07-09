@@ -1,14 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialization.hpp                                  :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:31:07 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/07/09 15:43:37 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/07/09 16:33:31 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
+
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"				/* Red */
@@ -17,19 +22,22 @@
 # define MAGENTA		"\033[35m"				/* Magenta */
 # define CYAN			"\033[36m"				/* Cyan */
 
-#include <iostream>
+class Data {
+public:
+    int value;
+};
 
-#ifndef SERIALIZATION_HPP
-# define SERIALIZATION_HPP
-
-class Serialization  {
+class Serializer  {
 
     public:
-        Serialization();
-        Serialization(const Serialization &copy);
-        Serialization &operator=(const Serialization &other);
-        ~Serialization();
+
+    static uintptr_t    serialize(Data *ptr)        {return reinterpret_cast<uintptr_t>(ptr);}
+    static Data         *deserialize(uintptr_t raw) {return reinterpret_cast<Data*>(raw);}
 
     private:
+        Serializer();
+        Serializer(const Serializer &copy);
+        Serializer &operator=(const Serializer &other);
+        ~Serializer();
             };
 #endif

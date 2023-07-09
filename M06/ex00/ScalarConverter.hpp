@@ -6,17 +6,17 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:27:35 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/07/09 15:15:27 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/07/09 16:08:15 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
 #include <sstream>
-
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
 
 class ScalarConverter  {
 

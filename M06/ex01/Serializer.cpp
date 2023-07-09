@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialization.cpp                                     :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:31:39 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/07/09 15:42:47 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/07/09 16:34:40 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialization.hpp"
+#include "Serializer.hpp"
 
-Serialization::Serialization(){}
-Serialization::~Serialization(){}
+Serializer::Serializer(){}
+Serializer::~Serializer(){}
 
-Serialization::Serialization(const Serialization &copy)   {
-/*-------------------------------------------------------------*/
+Serializer::Serializer(const Serializer &copy)   {
+/*----------------------------------------------*/
         if (this != &copy)
         *this = copy;
-/*------------------------------------------------------------*/}
+/*----------------------------------------------*/}
 
-Serialization &Serialization::operator=(const Serialization &other)   {
-/*-------------------------------------------------------------------------*/
+Serializer &Serializer::operator=(const Serializer &other)   {
+/*----------------------------------------------------------*/
     if (this == &other)
         return (*this);
     return (*this);
-/*-------------------------------------------------------------------------*/}
+/*----------------------------------------------------------*/}

@@ -6,9 +6,12 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:04:57 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/25 20:06:42 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/07/09 20:19:08 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef BASE_HPP
+# define BASE_HPP
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"				/* Red */
@@ -19,15 +22,10 @@
 
 #include <iostream>
 
-#ifndef BASE_HPP
-# define BASE_HPP
+class Base  {public:    virtual ~Base();};
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
+class D : public Base {};
 
-class Base  {
-
-    public:
-        Base();
-        ~Base();
-
-    private:
-            };
 #endif
