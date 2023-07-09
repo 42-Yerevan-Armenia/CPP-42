@@ -6,18 +6,14 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:27:35 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/25 20:29:52 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/07/09 15:15:27 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# define RESET			"\033[0m"
-# define RED			"\033[31m"				/* Red */
-# define GREEN			"\033[32m"				/* Green */
-# define YELLOW			"\033[33m"				/* Yellow */
-# define MAGENTA		"\033[35m"				/* Magenta */
-# define CYAN			"\033[36m"				/* Cyan */
-
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
+#include <sstream>
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
@@ -26,8 +22,21 @@ class ScalarConverter  {
 
     public:
         ScalarConverter();
+        ScalarConverter(const ScalarConverter &copy);
+        ScalarConverter &operator=(const ScalarConverter &other);
         ~ScalarConverter();
 
+        static void convert(const std::string &str);
+
     private:
-            };
+        
+        static bool isInt(const std::string& str);
+        static bool isChar(const std::string& str);
+        static bool isFloat(const std::string& str);
+        static bool isDouble(const std::string& str);
+        static void convertChar(const std::string& str);
+        static void convertInt(const std::string& str);
+        static void convertFloat(const std::string& str);
+        static void convertDouble(const std::string& str);
+                        };
 #endif

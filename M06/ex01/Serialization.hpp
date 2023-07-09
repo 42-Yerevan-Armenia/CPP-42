@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Serialization.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:31:07 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/25 20:31:30 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/07/09 15:43:37 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@
 
 #include <iostream>
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
+#ifndef SERIALIZATION_HPP
+# define SERIALIZATION_HPP
 
 class Serialization  {
 
     public:
         Serialization();
+        Serialization(const Serialization &copy);
+        Serialization &operator=(const Serialization &other);
         ~Serialization();
 
     private:

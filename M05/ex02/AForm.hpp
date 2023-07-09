@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:28:35 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/19 16:07:28 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/30 15:25:55 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AForm  {
         AForm();
         AForm(std::string const name, int sg, int efg);
         AForm(const AForm &other);
-        AForm& operator=(const AForm &other);
+        AForm &operator=(const AForm &other);
         virtual ~AForm();
     
         std::string const   getFName() const;

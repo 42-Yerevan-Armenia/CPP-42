@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 12:23:02 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/06/19 16:08:22 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/06/30 15:25:48 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form  {
         Form();
         Form(std::string const name, int sg, int efg);
         Form(const Form &other);
-        Form& operator=(const Form &other);
+        Form &operator=(const Form &other);
         ~Form();
     
         std::string const   getFName() const;
