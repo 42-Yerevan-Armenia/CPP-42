@@ -4,7 +4,7 @@
 #include <iostream>
 
 template <typename T> void print(T *a)
-{std::cout << *a;}
+{std::cout << *a << std::endl;}
 
 template <typename T> void iter (T *a, size_t l, void (*f)(T*))
 {
