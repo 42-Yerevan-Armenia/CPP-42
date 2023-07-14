@@ -3,7 +3,7 @@
 
 #include "easyfind.hpp"
 
-easyfind::easyfind(){}
-easyfind::~easyfind(){}
+template <typename T>
+typename T::iterator easyfind(T &container, int i){return (std::find(container.begin(), container.end(), i));}
 
 #endif
