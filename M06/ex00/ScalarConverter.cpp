@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tumolabs <tumolabs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:29:12 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/07/09 15:46:54 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/07/23 19:23:48 by tumolabs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,12 @@ bool ScalarConverter::isInt(const std::string &str)   {
     std::istringstream iss(str);
     int n;
     iss >> n;
+    std::cout << "❌ " << str << std::endl;
+    std::cout << "😅 " << n << std::endl;
     return !iss.fail() && iss.eof();
 /*--------------------------------------------------*/}
 
+    
 void ScalarConverter::convertInt(const std::string &str)  {
 /*-------------------------------------------------------*/
     int n = std::atoi(str.c_str());
@@ -62,7 +65,7 @@ void ScalarConverter::convertInt(const std::string &str)  {
     if (n < -128 || n > 127)
         std::cout << "char:   impossible" << std::endl;
     else if (n >= 32 && n < 127)
-        std::cout << "char:   " << static_cast<char>(n) <<  std::endl;
+        std::cout << "char:   " << static_cast<char>(n) <<  std::endl;  
     else
         std::cout << "char:   Non displayable" << std::endl;
     std::cout << "int:    " << static_cast<int>(n) << std::endl;
@@ -86,10 +89,12 @@ bool ScalarConverter::isFloat(const std::string &str) {
     return true;
 /*--------------------------------------------------*/}
 
+bool is_finite(float value) {return value == value && std::fabs(value) != std::numeric_limits<float>::infinity();}
+bool is_finite(double value) {return value == value && std::fabs(value) != std::numeric_limits<double>::infinity();}
+
 void ScalarConverter::convertFloat(const std::string &str) {
 /*--------------------------------------------------------*/
     float   f;
-
     if (str == "-inf")
         f = -std::numeric_limits<float>::infinity();
     else if (str == "+inf")
@@ -101,7 +106,7 @@ void ScalarConverter::convertFloat(const std::string &str) {
     char    c = static_cast<char>(f);
     double  d = static_cast<double>(f);
 
-    if (!std::isfinite(f))
+    if (!is_finite(f))
     {
         std::cout << "char:   impossible" << std::endl;
         std::cout << "int:    impossible" << std::endl;
@@ -151,7 +156,7 @@ void ScalarConverter::convertDouble(const std::string &str) {
     char    c = static_cast<char>(d);
     float   f = static_cast<float>(d);
     int     n = static_cast<int>(d);
-    if (!std::isfinite(d))
+    if (!is_finite(d))
     {
         std::cout << "char:   impossible" << std::endl;
         std::cout << "int:    impossible" << std::endl;

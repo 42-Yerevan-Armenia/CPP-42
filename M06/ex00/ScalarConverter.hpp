@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tumolabs <tumolabs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:27:35 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/07/09 16:08:15 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/07/23 17:51:42 by tumolabs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,16 @@
 class ScalarConverter  {
 
     public:
-        ScalarConverter();
-        ScalarConverter(const ScalarConverter &copy);
-        ScalarConverter &operator=(const ScalarConverter &other);
-        ~ScalarConverter();
 
         static void convert(const std::string &str);
 
     private:
         
+        ScalarConverter();
+        ScalarConverter(const ScalarConverter &copy);
+        ScalarConverter &operator=(const ScalarConverter &other);
+        ~ScalarConverter();
+
         static bool isInt(const std::string& str);
         static bool isChar(const std::string& str);
         static bool isFloat(const std::string& str);
