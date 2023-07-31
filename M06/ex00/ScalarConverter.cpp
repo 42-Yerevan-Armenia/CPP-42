@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tumolabs <tumolabs@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:29:12 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/07/23 19:23:48 by tumolabs         ###   ########.fr       */
+/*   Updated: 2023/07/26 17:40:47 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,9 @@ bool ScalarConverter::isInt(const std::string &str)   {
     std::istringstream iss(str);
     int n;
     iss >> n;
-    std::cout << "❌ " << str << std::endl;
-    std::cout << "😅 " << n << std::endl;
     return !iss.fail() && iss.eof();
 /*--------------------------------------------------*/}
 
-    
 void ScalarConverter::convertInt(const std::string &str)  {
 /*-------------------------------------------------------*/
     int n = std::atoi(str.c_str());

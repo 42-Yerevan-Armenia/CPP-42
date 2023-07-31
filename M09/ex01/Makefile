@@ -1,4 +1,4 @@
-NAME 		=	rpn
+NAME 		=	RPN
 CC 			=	c++
 CPPFLAGS 	=	-std=c++98 -Wall -Wextra -Werror
 SRCS 		=	$(wildcard *.cpp)
