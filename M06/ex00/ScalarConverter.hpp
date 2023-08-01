@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tumolabs <tumolabs@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 20:27:35 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/07/23 17:51:42 by tumolabs         ###   ########.fr       */
+/*   Updated: 2023/08/01 21:11:07 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
+
+# define RESET			"\033[0m"
+# define RED			"\033[31m"				/* Red */
 
 #include <iostream>
 #include <cstdlib>
