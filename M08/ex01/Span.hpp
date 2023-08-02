@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 15:44:09 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/07/28 16:11:48 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:38:34 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,21 @@ class Span  {
         int     shortestSpan() const;
         int     longestSpan() const;
 
+        std::vector<int>::iterator begin();
+        std::vector<int>::iterator end();
         template <class T> void    addNumber(T start, T end);
 
     private:
         std::vector<int>    _span;
 };
+
+template<typename It> void	Span::addNumber(It start, It end)
+{
+    while (start != end)
+    {
+        addNumber(*start);
+        ++start;
+    }
+}
 
 #endif
