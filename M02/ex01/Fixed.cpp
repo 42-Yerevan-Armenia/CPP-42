@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:43:00 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/05/15 17:41:11 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/08/02 20:15:34 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ Fixed::Fixed() : fpv(0) {std::cout << GREEN << "Default constructor called" << R
 Fixed::~Fixed() {std::cout << RED << "Destructor called 💀" << RESET << std::endl;}
 
  Fixed::Fixed(const Fixed &fixed)  {
-/*-------------------------------*/
+/*--------------------------------*/
     std::cout << YELLOW << "Copy constructor called" << RESET << std::endl; 
     *this = fixed;
-/*------------------------------*/}
+/*-------------------------------*/}
 
 const Fixed &Fixed::operator=(const Fixed &fixed){
-/*--------------------------------------------*/
+/*----------------------------------------------*/
     std::cout << CYAN << "Copy assignment operator called" << RESET << std::endl;
     if (this != &fixed)
         this->fpv = fixed.getRawBits();
     return (*this);
-/*-------------------------------------------*/}
+/*---------------------------------------------*/}
 
 Fixed::Fixed(const int value){
 /*--------------------------*/
@@ -48,9 +48,9 @@ int     Fixed::toInt(void) const            {return (this->fpv >> fbn);}
 float   Fixed::toFloat(void) const          {return (this->fpv / float(1 << fbn));}
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed){
-/*-----------------------------------------------------------*/
+/*------------------------------------------------------------*/
     out << fixed.toFloat();
     return (out);
-/*----------------------------------------------------------*/}
+/*-----------------------------------------------------------*/}
 
 

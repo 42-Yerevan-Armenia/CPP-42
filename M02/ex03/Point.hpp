@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:08:39 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/08/02 19:30:04 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/08/02 21:03:05 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ class Point
         Point   &operator=(const Point &fixed);
         ~Point();
 
-        int     getx() const;
-        int     gety() const;
-        float   getX() const;
-		float	getY() const;
+        float   getx() const;
+		float	gety() const;
 
     private:
         Fixed const _x;
