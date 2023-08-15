@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:14:32 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/07/31 20:16:50 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/08/15 18:48:28 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,22 @@
 #include <string>
 #include <cstdlib>
 #include <algorithm>
+#include <map>
 
 class BitcoinExchange   {
 
     public:
         BitcoinExchange();
-        BitcoinExchange(std::string &filename);
+        BitcoinExchange(const std::string &filename);
         ~BitcoinExchange();
 
         void    exchange();
 
     private:
         std::string _in;
-        std::string _out;
+        std::map<std::string, double> _btcPrices;
+        bool isValidDateFormat(const std::string &date);
+        bool isValidMonthDay(const std::string &date);
+        bool isLeapYear(int year);
                         };
 #endif
