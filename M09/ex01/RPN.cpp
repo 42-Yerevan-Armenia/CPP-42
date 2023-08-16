@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:14:41 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/08/16 15:57:21 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/08/16 18:09:36 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ Calculator::Calculator(){};
 Calculator::~Calculator(){};
 Calculator::Calculator(const Calculator &copy){}
 
-Calculator	&Calculator::operator=(const Calculator &other)
-{
+Calculator	&Calculator::operator=(const Calculator &other) {
+/*---------------------------------------------------------*/
 	if (this == &other)
 		return *this;
 	return (*this);
-}
+/*--------------------------------------------------------*/}
 
 bool Calculator::isop(const std::string& token){return token == "+" || token == "-" || token == "*" || token == "/";}
 
