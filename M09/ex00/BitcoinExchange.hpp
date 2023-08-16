@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:14:32 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/08/15 18:48:28 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/08/16 15:48:50 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class BitcoinExchange   {
     public:
         BitcoinExchange();
         BitcoinExchange(const std::string &filename);
+        BitcoinExchange(const BitcoinExchange &copy);
+        BitcoinExchange &operator=(const BitcoinExchange &other);
         ~BitcoinExchange();
 
         void    exchange();
