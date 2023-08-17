@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:14:41 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/08/16 18:09:36 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:01:59 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Calculator::Calculator(){};
 Calculator::~Calculator(){};
-Calculator::Calculator(const Calculator &copy){}
+Calculator::Calculator(const Calculator &copy){(void)copy;}
 
 Calculator	&Calculator::operator=(const Calculator &other) {
 /*---------------------------------------------------------*/
