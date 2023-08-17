@@ -6,7 +6,7 @@
 /*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:14:50 by arakhurs          #+#    #+#             */
-/*   Updated: 2023/08/16 20:02:01 by arakhurs         ###   ########.fr       */
+/*   Updated: 2023/08/17 11:06:30 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@
 void mergeInsertSort(std::vector<int> &arr);
 void mergeInsertSort(std::deque<int> &arr);
 
-template<typename Container>
-void display(const Container &arr) {
+template<typename Container> void display(const Container &arr)
+{
     typename Container::const_iterator it = arr.begin();
     if (it != arr.end())
     {
